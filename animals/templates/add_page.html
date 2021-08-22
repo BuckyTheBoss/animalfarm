@@ -5,6 +5,10 @@
 {% endblock%}
 
 {% block content %}
+{% if my_name %}
+    {{my_name}}
+{% endif %}
+
 <h4>{{title}}</h4>
 <form method='post'>
     {% csrf_token %}

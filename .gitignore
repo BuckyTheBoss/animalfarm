@@ -1,3 +1,4 @@
 db.sqlite3
 __pycache__/
 env/
+animalfarm2/local_settings.py
