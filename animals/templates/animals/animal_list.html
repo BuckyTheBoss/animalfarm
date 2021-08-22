@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title%}
+All Animals
+{% endblock%}
+
+{% block content %}
+<h2>This is the animal list</h2>
+
+<div class='row'>
+
+
+{% for animal in object_list %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{animal.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 'animal_detail' animal.pk %}" class="card-link btn btn-primary">View</a>
+    <a href="{% url 'update_animal' animal.pk %}" class="card-link btn btn-warning">Update</a>
+  </div>
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}

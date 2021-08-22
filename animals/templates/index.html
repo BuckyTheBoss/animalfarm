@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block title%}
+All Animals
+{% endblock%}
+
+{% block content %}
+<h2>This is the homepage</h2>
+
+{% for family in families %}
+<a href="{% url 'update_family' family.id%}">Update {{family.name}}!</a>
+{% endfor %}
+
+{% endblock %}

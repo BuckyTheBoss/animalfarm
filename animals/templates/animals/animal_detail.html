@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Animal - {{animal.name}}
+{% endblock%}
+
+{% block content %}
+<h2>This is the animal list</h2>
+
+<div class='row'>
+
+
+    <ul class="list-group">
+        <li class="list-group-item">Name: {{object.name}}</li>
+        <li class="list-group-item">Legs: {{object.legs}}</li>
+        <li class="list-group-item">Color: {{object.color}}</li>
+        <li class="list-group-item">Speed: {{object.speed}}</li>
+        <li class="list-group-item">Family: {{object.family.name}}</li>
+        <li class="list-group-item">
+            Sibilings: 
+            <ul class="list-group">
+                {% for sib in object.family.animal_set.all %}
+                    <li class="list-group-item">{{sib.name}}</li>
+                {% endfor %}
+            </ul>
+
+        </li>
+        
+      </ul>
+   
+</div>
+
+</div>
+{% endblock %}
