@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block title%}
+{{title}}
+{% endblock%}
+
+{% block content %}
+
+
+<h4>Signup Here!</h4>
+<form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+<button class='btn btn-success' type="submit">Save</button>
+</form>
+
+{% endblock %}

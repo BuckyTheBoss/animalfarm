@@ -4,7 +4,7 @@ from .models import Family, Animal
 class FamilyForm(forms.ModelForm):
     class Meta:
         model = Family
-        fields = '__all__'
+        fields = ['name']
 
 class AnimalForm(forms.ModelForm):
     class Meta:
