@@ -1,29 +1,24 @@
 {% extends 'base.html'%}
 
 {% block title%}
-{{title}}
+add multi animals
 {% endblock%}
 
 {% block content %}
-{% if my_name %}
-    {{my_name}}
-{% endif %}
+
 
 <h4>{{title}}</h4>
 <form method='post'>
     {% csrf_token %}
-  
-    {{ form.as_p }}
 
-    {% if formset %}
-        {{formset.management_form}}
+    {{ formset.management_form }}
 
-        <div id="form_set">
-            {% for f in formset %}
-                
-                    {{ f.as_p }}
-            {% endfor %}
-        </div>
+    <div id="form_set">
+        {% for f in formset %}
+            
+                {{ f.as_p }}
+        {% endfor %}
+    </div>
 
     <input type="button" value="Add More" id="add_more">
 
@@ -31,7 +26,6 @@
             {{ formset.empty_form.as_p }}
       
     </div>
-    {% endif %}
 <button class='btn btn-success' type="submit">Save</button>
 </form>
 
